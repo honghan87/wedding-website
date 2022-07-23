@@ -1,0 +1,95 @@
+@import "../../global.scss";
+@import "../../includeMedia/include-media";
+
+.about {
+  margin-top: 80px;
+  color: $fontcolor;
+
+  .aboutTextContainer {
+    padding: 0 12rem;
+  }
+  .aboutText {
+    text-align: center;
+
+    h1 {
+      font-size: 2rem;
+      font-family: "Playfair display", serif;
+      color: $primarycolor;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+  }
+
+  p {
+    font-size: 0.8rem;
+    padding-bottom: 1.5rem;
+    line-height: 1.2rem;
+  }
+
+  .aboutPictureSection {
+    background-color: $background-color;
+    padding: 1rem 0;
+
+    .aboutPictureContainer {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 5rem;
+
+      .aboutPicture {
+        flex: 1 1 25%;
+        overflow: hidden;
+        margin: 1rem;
+        box-shadow: 0px 10px 7px -8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+
+        img {
+          max-width: 100%;
+          height: auto;
+          border: 0;
+          vertical-align: top;
+        }
+
+        .aboutText {
+          padding: 0 1.5rem 1.5rem;
+
+          p {
+            text-align: left;
+            color: $fontcolor;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media(">phone", "<=bgtablet") {
+  .about {
+    .aboutTextContainer {
+      padding: 2rem 4rem;
+    }
+    .aboutPictureSection {
+      .aboutPictureContainer {
+        padding: 0 3rem;
+        .aboutPicture {
+          flex: 1 1 33%;
+        }
+      }
+    }
+  }
+}
+
+@include media("<=tablet") {
+  .about {
+    .aboutTextContainer {
+      padding: 2rem 2rem;
+    }
+    .aboutPictureSection {
+      .aboutPictureContainer {
+        padding: 0 2rem;
+        .aboutPicture {
+          flex: 1 1 100%;
+        }
+      }
+    }
+  }
+}

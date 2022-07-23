@@ -1,0 +1,33 @@
+@import "../../global.scss";
+
+.testimonial {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .reviewContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3rem;
+    font-family: "Playfair Display", serif;
+
+    p {
+      font-size: 0.85rem;
+      margin-bottom: 2.2rem;
+      line-height: 1.5rem;
+      word-spacing: 0.2rem;
+
+      span {
+        font-size: 3rem;
+        color: $primarycolor;
+      }
+    }
+    h4 {
+      color: $primarycolor;
+      font-size: 1.2rem;
+    }
+  }
+}

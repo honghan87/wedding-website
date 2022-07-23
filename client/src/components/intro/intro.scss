@@ -1,0 +1,260 @@
+@import "../../global.scss";
+@import "../../includeMedia/_include-media.scss";
+
+// Showing image
+
+.intro {
+  position: relative;
+  margin-top: 100vh;
+  z-index: 10;
+  width: 100%;
+  background-color: $secondarycolor;
+  color: $fontcolor;
+  font-family: "Baskerville Display", "serif";
+  box-shadow: 0px -17px 15px rgb(0 0 0 / 30%);
+
+  .mainContainer {
+    position: relative;
+    display: flex;
+    width: calc(100vw - 17px);
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 4rem 2rem 4rem 2rem;
+
+    .slideshow {
+      flex: 1 1 50%;
+      overflow: hidden;
+      text-align: center;
+      max-width: 120vw;
+      height: 53vw;
+
+      .slideshowSlider {
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+
+        .carouselItem {
+          position: relative;
+          z-index: 0;
+          opacity: 0;
+          transition: all 0.2s ease;
+        }
+        .active {
+          z-index: 1;
+          opacity: 0.9;
+          height: 100%;
+          width: 100%;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+        }
+      }
+    }
+
+    .textContainer {
+      flex: 1 1 50%;
+      overflow: hidden;
+
+      // Letter O
+      .introLetter {
+        position: absolute;
+        z-index: 2;
+        top: -3vw;
+        right: 27vw;
+        font-size: 43vw;
+        color: $fontcolor;
+        opacity: 0.1;
+      }
+
+      .introText {
+        overflow: hidden;
+        padding: 0 1.5rem;
+
+        .bgTitle {
+          font-size: 9vw;
+          line-height: 1;
+          overflow: hidden;
+
+          // Arrow fa
+          span {
+            color: $primarycolor;
+          }
+        }
+        .smTitle {
+          font-size: 2.5vw;
+          margin-top: 1rem;
+          text-align: right;
+        }
+      }
+      .contactContainer {
+        position: relative;
+        margin-top: 8vw;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+
+        .card {
+          flex: 1 1 50%;
+          padding: 0 2vw;
+
+          a {
+            text-decoration: none;
+            color: $fontcolor;
+
+            h3 {
+              font-size: 1.6vw;
+              transition: all 0.5s ease;
+              margin-bottom: 1rem;
+
+              span {
+                vertical-align: middle;
+              }
+            }
+
+            p {
+              font-size: 1.1vw;
+              color: rgb(139, 139, 139);
+              transition: all 0.5s ease;
+            }
+
+            &:hover {
+              h3,
+              p {
+                color: $primarycolor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media(">=tablet", "<=bgtablet") {
+  .intro {
+    .mainContainer {
+      flex-direction: column;
+      width: 95%;
+      padding-bottom: 1rem;
+
+      .slideshow {
+        flex: 0 1 auto;
+        height: 60vw;
+      }
+
+      .textContainer {
+        position: relative;
+
+        .introLetter {
+          font-size: 50vw;
+          top: -7vw;
+          left: -1vw;
+        }
+
+        .introText {
+          padding: 1.5rem 1rem;
+          .bgTitle {
+            font-size: 12vw;
+
+            // Arrow fa
+            span {
+              color: $primarycolor;
+            }
+          }
+          .smTitle {
+            font-size: 4vw;
+            text-align: center;
+          }
+        }
+
+        .contactContainer {
+          min-height: 15vw;
+          .card {
+            a {
+              h3 {
+                font-size: 2.5vw;
+                margin-bottom: 1rem;
+
+                span {
+                  vertical-align: middle;
+                  font-size: 2rem;
+                  margin-left: 0.6vw;
+                }
+              }
+
+              p {
+                font-size: 1.5vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media("<=tablet") {
+  .intro {
+    .mainContainer {
+      flex-direction: column;
+      .slideshow {
+        flex: 0 1 auto;
+        height: 85vw;
+        .slideshowSlider {
+          background-position: bottom center;
+        }
+      }
+      .textContainer {
+        .introLetter {
+          font-size: 60vw;
+          top: 90vw;
+          left: 6vw;
+        }
+
+        .introText {
+          padding: 1.5rem 1rem;
+          .bgTitle {
+            font-size: 16vw;
+
+            // Arrow fa
+            span {
+              color: $primarycolor;
+            }
+          }
+          .smTitle {
+            font-size: 5vw;
+            text-align: center;
+          }
+        }
+
+        .contactContainer {
+          flex-direction: column;
+          align-items: center;
+          .card {
+            text-align: center;
+            padding-left: auto 3rem;
+            a {
+              h3 {
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+
+                span {
+                  vertical-align: middle;
+                  font-size: 2rem;
+                  margin-left: 0.6vw;
+                }
+              }
+
+              p {
+                font-size: 1rem;
+                margin-bottom: 3rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

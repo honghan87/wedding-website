@@ -1,0 +1,50 @@
+@import "../../global.scss";
+@import "../../includeMedia/_include-media.scss";
+
+.footer {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  padding: 1rem;
+  background-color: $primarycolor;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: $secondarycolor;
+
+  .footerContainer {
+    display: flex;
+    padding: 1rem 3rem;
+    justify-content: space-between;
+    line-height: 1rem;
+    a {
+      color: $fontcolor;
+    }
+  }
+  .footerSocial {
+    text-align: center;
+    overflow: hidden;
+
+    p {
+      margin-bottom: 1rem;
+    }
+    a {
+      color: $secondarycolor;
+      font-size: 3rem;
+      padding: 0 0.25rem;
+    }
+  }
+}
+
+@include media("<=tablet") {
+  .footer {
+    .footerContainer {
+      flex-direction: column;
+      padding-left: 1rem;
+
+      .footerSocial {
+        text-align: left;
+        overflow: hidden;
+        padding: 1.5rem 0;
+      }
+    }
+  }
+}

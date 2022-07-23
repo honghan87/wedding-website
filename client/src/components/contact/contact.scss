@@ -1,0 +1,168 @@
+// Mobile first approach
+@import "../../global.scss";
+@import "../../includeMedia/_include-media.scss";
+
+// Font size
+.xlFont {
+  font-size: 9rem;
+  color: $primarycolor;
+}
+
+.bigFont {
+  color: $fontcolor;
+  font-size: 5rem;
+  text-align: center;
+  line-height: 6rem;
+  overflow: hidden;
+}
+
+.smallFont {
+  color: $fontcolor;
+  font-size: 1.5rem;
+  text-align: right;
+  padding: 1rem 1rem 0 0;
+}
+
+// Placeholder
+::placeholder {
+  color: lightgrey;
+}
+
+.contact {
+  padding: 2rem 1rem 2rem;
+  background-color: $background-color;
+  font-family: "Lato", sans-serif;
+
+  .leftContainer {
+    padding: 1rem 0;
+    font-size: 0.8rem;
+    font-weight: 300;
+
+    .textContainer {
+      font-family: "Playfair Display", sans-serif;
+      padding-bottom: 2rem;
+
+      .firstWord {
+        padding-right: 4rem;
+      }
+      .secondWord,
+      .thirdWord {
+        padding-left: 9rem;
+        text-align: left;
+      }
+
+      .address {
+        margin-top: 1.56rem;
+        line-height: 1.1rem;
+
+        strong {
+          font-weight: 900;
+        }
+
+        a {
+          text-decoration: none;
+          color: $primarycolor;
+        }
+      }
+    }
+  }
+
+  .rightContainer {
+    p {
+      font-size: 0.9rem;
+      color: $primarycolor;
+    }
+    .formContainer {
+      display: flex;
+      flex-direction: column;
+      // p {
+      //   font-size: 0.9rem;
+      //   color: $primarycolor;
+      // }
+      input,
+      textarea {
+        font-family: "Lato", sans-serif;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 300;
+        border-radius: 0;
+        border: 1px solid lightgrey;
+        box-sizing: content-box;
+        margin-bottom: 0.8rem;
+        transition: all 0.2s ease;
+      }
+
+      textarea {
+        height: 5rem;
+      }
+      .button {
+        button {
+          width: 100%;
+          border: 1px solid transparent;
+          background-color: $primarycolor;
+          padding: 1rem 0;
+          color: $fontcolor;
+          margin-bottom: 1rem;
+          transition: all 0.2s ease;
+          box-sizing: content-box;
+          cursor: pointer;
+        }
+      }
+      .button button:hover {
+        background-color: $fontcolor;
+        border: 1px solid $fontcolor;
+        color: $secondarycolor;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: $fontcolor;
+      }
+    }
+  }
+}
+
+@include media(">=tablet") {
+  .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .leftContainer {
+      flex: 1 1 50%;
+      .textContainer {
+        padding-right: 2rem;
+        .firstWord {
+          padding-right: 0;
+        }
+        .secondWord,
+        .thirdWord {
+          padding-left: 18vw;
+          text-align: left;
+        }
+      }
+    }
+
+    .rightContainer {
+      flex: 1 1 50%;
+      padding-right: 2rem;
+    }
+  }
+}
+
+@include media(">phone", "<tablet") {
+  .contact {
+    .leftContainer {
+      .textContainer {
+        .firstWord {
+          padding-right: 4rem;
+        }
+        .secondWord,
+        .thirdWord {
+          padding-left: 10rem;
+          text-align: left;
+        }
+      }
+    }
+  }
+}

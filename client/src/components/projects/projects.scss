@@ -1,0 +1,49 @@
+@import "../../global.scss";
+@import "../../includeMedia/_include-media.scss";
+
+.mainProject {
+  min-height: 100vh;
+  margin-bottom: 2rem;
+  padding: 90px 1rem 0;
+  font-weight: 300;
+
+  .projectsText {
+    color: $primarycolor;
+    padding-bottom: 2rem;
+
+    .projectsTextContainer {
+      h1 {
+        font-family: "Playfair display", sans-serif;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: $fontcolor;
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+      }
+    }
+  }
+
+  .projectsContainer {
+    .projectsPhotoContainer {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+}
+@include media(">=tablet") {
+  .projectsText {
+    margin: 0 auto;
+    max-width: 60%;
+    text-align: center;
+  }
+
+  .projectsContainer {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
